@@ -1,0 +1,26 @@
+<h1>List of all your tasks</h1>
+
+<!-- link to create a new task -->
+<%= link_to "Add new task", tasks_new_path %>
+
+<!-- Loop through the tasks to display them? -->
+<ul>
+  <% @tasks.each do |task| %>
+  <li>
+    <h3><%= task.name %></h3>
+    <!-- link to display single task -->
+    <%= link_to "Go to this task", task_path(task) %>
+    <p><%= task.done %></p>
+    <!-- link to edit task -->
+    <%= link_to "Edit this path", edit_task_path(task) %>
+    <!-- link to delete task (use method: delete in link_to) -->
+    <%= link_to "Delete this task", task_path(task), method: :delete %>
+    <% end %>
+  </li>
+</ul>
+
+
+
+
+
+
